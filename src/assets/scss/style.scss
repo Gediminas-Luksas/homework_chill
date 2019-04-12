@@ -1,0 +1,16 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+	font-family: 'Arial', sans-serif;
+	background-color: whitesmoke;
+}
