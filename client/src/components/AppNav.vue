@@ -8,6 +8,12 @@
                 <RouterLink to="/about"> 
                     About
                 </RouterLink>
+                <RouterLink to="/login"> 
+                    Login
+                </RouterLink>
+                <RouterLink to="/register"> 
+                    Register
+                </RouterLink>
             </li>
         </ul>
     </nav>
@@ -21,10 +27,13 @@ name: 'AppNav'
 
 <style lang="scss">
 .app-nav {
-padding: 0;
+padding:0;
 margin: 0;
-padding-bottom: 10px;
+padding-bottom: 4px;
 
+}
+.app-nav ul{
+    padding: 0 30px;
 }
 .app-nav li{
     list-style-type: none;
