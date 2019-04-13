@@ -1,7 +1,19 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
+const config = require('../config/db')
+
+mongoose.connect(config.DB, {
+useNewUrlParser: true,
+}).then(() => {
+        console.log('Database is Connected!')
+    },
+    err => {
+        console.log('Can not Connected to database!' + err)
+    }
+);
 
 
 const app = express();
@@ -9,10 +21,14 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/status', (req,res) => {
+app.post('/register', (req,res) => {
     res.send({
-        message: "Hello worls!"
+        message: `${req.body.email} - Register Success!`
     })
 })
 
-app.listen(process.env.POST || 51555);
+const PORT = process.env.PORT || 51555;
+
+app.listen(PORT, () => {
+    console.log(`Server is running on PORT ${PORT}`)
+});
